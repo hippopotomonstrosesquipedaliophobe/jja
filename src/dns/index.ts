@@ -25,11 +25,11 @@ import { getIsAliveByAddress } from './get-is-alive-by-address';
 import { getIdByDnsServer } from './getIdByDnsServer';
 
 /**
- * ## 与 github 相关的命令
- * @param params 命令参数
+ * ## 与 dns 相关的命令
+ * @param params - 命令参数
  */
-export async function dnsCommand(params: ArgsArrMapItem<dnsParam>) {
-  dataStore.reset(params.options);
+export async function dnsCommand(params?: ArgsArrMapItem<dnsParam>) {
+  dataStore.reset(params?.options);
   await getLocalIp();
   await getIp();
   waiting.destroyed();

@@ -120,7 +120,6 @@ export default [
       ],
       'import/no-duplicates': 'error',
       'import/no-cycle': 'warn',
-      // 未使用的导入规则， error 强制级别删除，联动 ts-eslint 规则
       'unused-imports/no-unused-imports': 'error',
       'unused-imports/no-unused-vars': 'off', // 与 '@typescript-eslint/no-unused-vars' 冲突
     },

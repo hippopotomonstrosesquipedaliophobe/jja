@@ -1,5 +1,4 @@
 import { Args } from '@vvi/command';
-import { hexPen, randomPen, redPen } from '@vvi/pen';
 import { ArgsArrMapItemList } from '../types';
 import { dog } from './dog';
 // 初始化一个命令
@@ -15,19 +14,21 @@ command
       '--ignore <-i> (不打印日志（默认打印的）)',
       '--subdirectories <-s> (这是一个危险的命令，用于 windows 下递归删除执行命令下所有的给定文件名称)',
     ],
-    'update <up> (做一个简单的 npm 升级程序，对，简单的)': [
-      '--ignore <-i> (不建议你这么用，你会发现你像个傻子一样在那等结果)',
-      `--dependencies <-d> (更新依赖，跟 ${randomPen('npm update')} 一样)`,
-    ],
     'clearScreen <cls> (清理终端显示屏幕，同 clearTerminal )': '',
-    'clearTerminal  <clear>  (清理终端显示屏幕，同 clearScreen )': '',
-    'git   (一些关于 git 的操作)': [
-      `commit (git 提交代码，是 ${redPen(
-        'commit',
-      )} 提交啊，不是 ${hexPen('#666')('push')} 推送)`,
-      'merge (合并两个分支)',
-      'tag (给提交打上 tag)',
-    ],
+    'clearTerminal  <clear>  (清理终端显示屏幕，同 clearScreen  )': '',
+    /** version 3.0.0 移除了该项。后续版本将考虑直接处移除相关代码 */
+    // 'update <up> (做一个简单的 npm 升级程序，对，简单的)': [
+    //   '--ignore <-i> (不建议你这么用，你会发现你像个傻子一样在那等结果)',
+    //   `--dependencies <-d> (更新依赖，跟 ${randomPen('npm update')} 一样)`,
+    // ],
+    /** version 3.0.0 移除了该项。后续版本将考虑直接处移除相关代码 */
+    // 'git   (一些关于 git 的操作)': [
+    //   `commit (git 提交代码，是 ${redPen(
+    //     'commit',
+    //   )} 提交啊，不是 ${hexPen('#666')('push')} 推送)`,
+    //   'merge (合并两个分支)',
+    //   'tag (给提交打上 tag)',
+    // ],
     'dns  (使用 dns 获取 ip 地址)': [
       '--domain <-d> (获取给定域名获取 ip 地址，默认 github.com )',
       '--port <-p> (配置要校验的 port 端口号，默认为 443)',
@@ -36,7 +37,7 @@ command
     ],
     // 'run 执行': [],
     // 执行不可预估
-    'runOtherCode <run> (执行其他的代码,使用 )': [],
+    'runOtherCode <run> (执行其他的代码，用来做环境变量 )': [],
   })
   .run();
 

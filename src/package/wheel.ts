@@ -3,9 +3,7 @@ import { diffPackage } from './diff';
 import { updateDependence } from './updateDependence';
 
 /**
- *
- * 循环执行
- *
+ * # 循环执行
  */
 export async function wheel(params: {
   '--diff'?: (string | number | boolean)[] | undefined;

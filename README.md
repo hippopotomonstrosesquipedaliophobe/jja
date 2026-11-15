@@ -1,6 +1,6 @@
 # jolly job aid (开心工作助手)
 
-[![version](<https://img.shields.io/npm/v/jja.svg?logo=npm&logoColor=rgb(0,0,0)&label=版本号&labelColor=rgb(73,73,228)&color=rgb(0,0,0)>)](https://www.npmjs.com/package/jja) [![issues 提交](<https://img.shields.io/badge/issues-提交-rgb(255,0,63)?logo=github>)](https://github.com/gleanings/jja/issues)
+[![version](<https://img.shields.io/npm/v/jja.svg?logo=npm&logoColor=rgb(0,0,0)&label=版本号&labelColor=rgb(73,73,228)&color=rgb(0,0,0)>)](https://www.npmjs.com/package/jja) [![issues 提交](<https://img.shields.io/badge/issues-提交-rgb(255,0,63)?logo=github>)](https://github.com/hippopotomonstrosesquipedaliophobe/jja/issues)
 
 ---
 
@@ -19,7 +19,7 @@ npm install --save-dev  jja
 
 ### `remove`
 
-可用 `npx jja  rm  <filename>  <filename>  <...>` 的模式进行移除文件或文件夹
+可用 `npx jja rm <filename> <filename> <...>` 的模式进行移除文件或文件夹
 
 ```bash
 npx jja  rm <filename>
@@ -28,7 +28,7 @@ npx jja  rm <filename>
 如果不想显示该过程的 `log` 信息，可以使用 `-i` 忽略掉:
 
 ```bash
-npx jja  rm  -i  filename
+npx jja rm -i filename
 ```
 
 ### `package`
@@ -109,6 +109,6 @@ npx jja dns -n
 
 ## 状态
 
-此软件包是 `MrMudBean` 生态系统的一部分。
+此软件包是 `MudBean` 生态系统的一部分。
 它使用严格的 TypeScript 编写，并通过 Rollup 构建进行验证。
 虽然单元测试较少，但 API 稳定，并在生产环境中大量使用。

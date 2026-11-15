@@ -1,13 +1,12 @@
 import { prefixList } from '@vvi/command';
 import { isNull, isUndefined } from '@vvi/is';
-import { _p, PackageJson, pathJoin, readFileToJsonSync } from '@vvi/node';
-import { cyanPen, greenPen } from '@vvi/pen';
+import { PackageJson, pathJoin, readFileToJsonSync } from '@vvi/node';
+import { greenPen } from '@vvi/pen';
 import { dog } from '../../aided/dog';
 import { pen399 } from '../../aided/pen';
 import { waiting } from '../../aided/waiting';
 import { diffData } from './data-store';
 import { getLatestVersionByName } from './get-latest-version-by-name';
-import { testNpmRegistry } from './test-npm-registry';
 
 /**
  * 验证依赖的包的线上数据
@@ -17,16 +16,15 @@ export async function diffVersion(): Promise<void> {
   /**  包名列表  */
   const keys = Object.keys(dependenceList);
 
+  // 未正确指定源将使用官方源
   if (
     keys.length > 18 &&
     (isUndefined(diffData.registry) ||
       !['官方', '淘宝', '腾讯', '中科大', 'yarn'].some(
         e => e === diffData.registry,
       ))
-  ) {
-    diffData.registry = await testNpmRegistry();
-    _p(`由于您未设置或者设置有误，现使用 ${cyanPen(diffData.registry)} npm 源`);
-  }
+  )
+    diffData.registry = '官方';
 
   const promiseList = keys.map(
     key =>

@@ -5,11 +5,9 @@ import { command } from './aided/command';
 import { dog } from './aided/dog';
 import { clearScreen } from './clearScreen';
 import { dnsCommand } from './dns';
-import { git } from './git';
 import { packageManage } from './package';
 import { remove } from './remove';
 import { runOther } from './run-other';
-import { update } from './update';
 
 const arg = command.args.$arrMap;
 
@@ -21,7 +19,8 @@ dog(command.args.$original);
 
 if (command.args.$isVoid) {
   dog('没有匹配到子命令，打印帮助信息并退出');
-  command.help();
+  await dnsCommand();
+  // command.help();
   command.end();
 } else if (isEmptyArray(command.args.$only)) {
   console.log(
@@ -48,15 +47,9 @@ async function run() {
   } else if (currentSubcommand.clearScreen || currentSubcommand.clearTerminal) {
     dog('执行清屏');
     await clearScreen();
-  } else if (currentSubcommand.git) {
-    dog('执行 git 相关命令');
-    await git(currentSubcommand.git);
   } else if (currentSubcommand.package) {
     dog('执行 package 相关命令');
     await packageManage(currentSubcommand.package!);
-  } else if (currentSubcommand.update) {
-    dog('执行 update 相关命令');
-    await update(currentSubcommand.update!);
   } else if (currentSubcommand.dns) {
     dog('执行 dns 相关的命令');
     await dnsCommand(currentSubcommand.dns!);

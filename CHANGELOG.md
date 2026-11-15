@@ -1,5 +1,18 @@
 # jolly job aid
 
+## 3.0.0 (2026-11-15)
+
+- 为自己的手贱买单
+
+### 删除
+
+- 移除了命令 `update`、`git`
+
+### 修改
+
+- 原没有命令参数返回帮助信息，现更改为 `dns` 命令，但是不接受任何子参数
+- 命令 `pkg` 的 `--diff` 子命令在未给值时不再进行源测试，改为使用默认官方源（最近几次使用发现淘宝源状态并没有官方源稳定，怀疑淘宝源添加了限频）
+
 ## 2.5.6 (2026-10-1)
 
 - 维护信息
@@ -15,7 +28,7 @@
 
 - 维护信息
 - npm v11 对 "package.json" 文件进行了强验证，如果 "package.json" 中的 "override" 锁定的依赖不得是显式声明的包，否则将报错
-  
+
 ```bash
 npm error code EOVERRIDE
 npm error Override for eslint@^9.39.4 conflicts with direct dependency
@@ -27,9 +40,9 @@ Error: Process completed with exit code 1.
 
 ```json
 {
-    "jja": {
-        "pkg": ["example"]
-    }
+  "jja": {
+    "pkg": ["example"]
+  }
 }
 ```
 
@@ -37,11 +50,11 @@ Error: Process completed with exit code 1.
 
 ```json
 {
-    "jja": {
-        "pkg": {
-            "example": "该包升级将导致 xxx 问题"
-        }
+  "jja": {
+    "pkg": {
+      "example": "该包升级将导致 xxx 问题"
     }
+  }
 }
 ```
 

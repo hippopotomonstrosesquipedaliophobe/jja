@@ -37,6 +37,11 @@ export const dataStore: DataStore = {
   ],
   ips: {},
   rrtype: ['A'],
+  /**
+   * # 重置本命令数据，以防上次执行数据残留
+   *
+   * @param param -  命令参数
+   */
   reset(param: ArgsArrMapOptions<dnsParam>[] | undefined): void {
     this.ips = {};
     this.domain = 'github.com';

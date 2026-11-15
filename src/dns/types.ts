@@ -35,6 +35,7 @@ export type rrtype =
   | 'TXT';
 
 export type DataStore = {
+  /**  重制数据，防止上次执行数据残留造成影响  */
   reset(param: ArgsArrMapOptions<dnsParam>[] | undefined): void;
   /**  要检测的域名  */
   domain: string;

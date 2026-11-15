@@ -24,7 +24,7 @@ packageJson = {
   ...packageJson,
   author: {
     name: '泥豆君',
-    email: 'Mr.MudBean@outlook.com',
+    email: 'MudBean@outlook.com',
     url: 'https://mudbean.cn',
   },
   description: '一些在终端的执行动作 🥜',
@@ -36,16 +36,16 @@ packageJson = {
     'THIRD-PARTY-LICENSES.txt',
     'CHANGELOG.md',
   ],
-  keywords: ['jja', 'mudbean', 'vvi'],
+  keywords: ['jja', 'vvi'],
   homepage: 'https://npms.gleanings.cn/jja',
   dependencies,
   bugs: {
-    url: 'https://github.com/gleanings/jja/issues',
-    email: 'Mr.MudBean@outlook.com',
+    url: 'https://github.com/hippopotomonstrosesquipedaliophobe/jja/issues',
+    email: 'MudBean@outlook.com',
   },
   repository: {
     type: 'git',
-    url: 'git+https://github.com/gleanings/jja.git',
+    url: 'git+https://github.com/hippopotomonstrosesquipedaliophobe/jja.git',
   },
   publishConfig: {
     access: 'public',
